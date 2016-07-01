@@ -167,5 +167,20 @@
 		</war>
 
     </target>
+    <profiles>
+		<profile>
+			<id>openshift</id>
+		<target name="deploywebapp" depends="build-project">
+
+		<war destfile="target/adms-spring-web.war" webxml="WebContent/WEB-INF/web.xml">
+		   <fileset dir="WebContent">
+			  <include name="**/*.*"/>
+		   </fileset>  
+		   <classes dir="build/classes"/>
+		</war>
+
+    </target>
+		</profile>
+	</profiles>
 </project>
 
